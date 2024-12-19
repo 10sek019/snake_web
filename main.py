@@ -277,12 +277,12 @@ async def main():
                 if x1 >= num_block_width or x1 < 0 or y1 >= num_block_height or y1 < 0:
                     game_over_1 = True
                     wall1 = True
-                    # wall_sound.play()
+                    wall_sound.play()
                     break
                 if x2 >= num_block_width or x2 < 0 or y2 >= num_block_height or y2 < 0:
                     game_over_2 = True
                     wall2 = True
-                    # wall_sound.play()
+                    wall_sound.play()
                     break
 
                 # 自分自身や他プレイヤーとの衝突判定
