@@ -134,7 +134,7 @@ async def main():
     
     # pygameの初期化
     pygame.init()
-    # pygame.mixer.init()
+    pygame.mixer.init()
     dis = pygame.display.set_mode((dis_width, dis_height))
     pygame.display.set_caption("2人で対戦！スネークゲーム")
 
@@ -148,11 +148,11 @@ async def main():
 #     start_time = pygame.time.get_ticks()  # ゲーム開始時刻を記録
 
     # 効果音
-    # eat_sound = pygame.mixer.Sound("./sound/8bit取得1_えさ.mp3")
-    # wall_sound = pygame.mixer.Sound("./sound/Crash Beer Bottle On Cinder Block Smash 02.wav")
-    # you_sound = pygame.mixer.Sound("./sound/8bit爆発2_あいて.mp3")
-    # start_sound = pygame.mixer.Sound("./sound/Countdown06-1.mp3")
-    # eat_sound.set_volume(0.3)
+    eat_sound = pygame.mixer.Sound("./sound/8bit取得1_えさ.ogg")
+    wall_sound = pygame.mixer.Sound("./sound/Crash Beer Bottle On Cinder Block Smash 02.ogg")
+    you_sound = pygame.mixer.Sound("./sound/8bit爆発2_あいて.ogg")
+    start_sound = pygame.mixer.Sound("./sound/Countdown06-1.ogg")
+    eat_sound.set_volume(0.3)
     
 
 
@@ -198,9 +198,6 @@ async def main():
                 if event.type == pygame.QUIT:
                     game_close = True
                 if event.type == pygame.KEYDOWN:
-                    # if event.key == pygame.K_q:
-                    #     end_game = False
-                    #     game_close = True
                     if event.key == pygame.K_c:
                         end_game = False
                         game_init = True
@@ -231,7 +228,7 @@ async def main():
                 if event.type == pygame.KEYDOWN:
                         if game_init_2:
                             if event.key == pygame.K_SPACE:
-                                # start_sound.play()
+                                start_sound.play()
                                 wait_start_time = pygame.time.get_ticks()  # 待機の開始時刻を記録
                                 while pygame.time.get_ticks() - wait_start_time < 3000:  # 3秒経過を待機
                                     for wait_event in pygame.event.get():
@@ -299,24 +296,24 @@ async def main():
                     del snake_list2[0]
                 if head1 in snake_list1[:-1] or head1 in snake_list2:
                     game_over_1 = True
-                    # you_sound.play()
+                    you_sound.play()
                     break
                 if head2 in snake_list2[:-1] or head2 in snake_list1:
                     game_over_2 = True
-                    # you_sound.play()
+                    you_sound.play()
                     break
 
                 easy = 0
                 if ((food_x-easy) <= head1[0] <= (food_x+easy)) and ((food_y-easy) <= head1[1] <= (food_y+easy)):  
                     food_x, food_y = make_food()
                     length1 += step 
-                    # eat_sound.play()
+                    eat_sound.play()
 
                 if ((food_x-easy) <= head2[0] <= (food_x+easy)) and ((food_y-easy) <= head2[1] <= (food_y+easy)):  
                     food_x, food_y = make_food()
                     length2 += step
 
-                    # eat_sound.play()
+                    eat_sound.play()
 
                 dis.fill(black)    
 
