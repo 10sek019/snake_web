@@ -198,16 +198,16 @@ async def main():
                 if event.type == pygame.QUIT:
                     game_close = True
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_q:
-                        end_game = False
-                        game_close = True
+                    # if event.key == pygame.K_q:
+                    #     end_game = False
+                    #     game_close = True
                     if event.key == pygame.K_c:
                         end_game = False
                         game_init = True
                         
                         
             dis.fill(black)        
-            message(dis, font_message, "時間切れ！C:もう一度 Q:終了", red)
+            message(dis, font_message, "時間切れ！C:もう一度", red)
             show_scores(dis, font_score, length1 - 1, length2 - 1)
             pygame.display.update()
 
