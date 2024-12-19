@@ -148,10 +148,10 @@ async def main():
 #     start_time = pygame.time.get_ticks()  # ゲーム開始時刻を記録
 
     # 効果音
-    eat_sound = pygame.mixer.Sound("/sound/8bit取得1_えさ.ogg")
-    wall_sound = pygame.mixer.Sound("/sound/Crash Beer Bottle On Cinder Block Smash 02.ogg")
-    you_sound = pygame.mixer.Sound("/sound/8bit爆発2_あいて.ogg")
-    start_sound = pygame.mixer.Sound("/sound/Countdown06-1.ogg")
+    eat_sound = pygame.mixer.Sound("sfx/8bit取得1_えさ.ogg")
+    wall_sound = pygame.mixer.Sound("sfx/Crash-Beer-Bottle-On-Cinder-Block-Smash-02.ogg")
+    you_sound = pygame.mixer.Sound("sfx/8bit爆発2_あいて.ogg")
+    start_sound = pygame.mixer.Sound("sfx/Countdown06-1.ogg")
     eat_sound.set_volume(0.3)
     
 
